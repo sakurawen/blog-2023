@@ -1,0 +1,42 @@
+import Link from 'next/link';
+import list from '@/data';
+import Image from 'next/image';
+const Blog = () => {
+	return (
+		<div className='sm:pt-24 pt-12 space-y-6 relative px-4'>
+			<div className='flex mb-12'>
+				<div className='flex-1 pr-6 space-y-4'>
+					<h2 className='font-bold text-2xl mb-8'>ソーシャルファイヤーウッドさんのブログ</h2>
+					<p>写作文章供日后记忆，现在免费给你看看也是可以的。</p>
+					<p>将来の思い出になるような記事を書いて、無料で見せてもいいのです。</p>
+				</div>
+				<div className='relative sm:block hidden w-36 h-36 mb-4 sm:w-[240px] sm:h-[240px]'>
+					<Image
+						src='/head.jpg'
+						className=' select-none pointer-events-none'
+						fill
+						sizes='240,240'
+						priority
+						alt=''
+					/>
+				</div>
+			</div>
+			<div>
+				<h2 className='text-black text-2xl pb-6'>文章</h2>
+				{list.map((item) => {
+					return (
+						<Link
+							href={`/posts/${item.key}`}
+							className='block hover:text-black pb-6 opacity-80 hover:opacity-100 transition cursor-pointer'
+							key={item.key}>
+							<h2 className='text-base overflow-hidden overflow-ellipsis whitespace-nowrap'>{item.title}</h2>
+							<span className='text-xs text-[#555555]'>{item.fmtDate}</span>
+						</Link>
+					);
+				})}
+			</div>
+		</div>
+	);
+};
+
+export default Blog;

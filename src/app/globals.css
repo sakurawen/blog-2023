@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind base;
+
+body,
+html {
+	@apply selection:bg-gray-400/20 selection:text-black h-full w-full;
+}
+
+.posts-theme {
+	position: relative;
+	color: #555555;
+}
+.posts-theme > * {
+	@apply mt-8 mb-8;
+}
+.posts-theme h1 {
+	@apply text-3xl text-black font-bold;
+}
+
+.posts-theme h2 {
+	@apply text-2xl text-black font-bold;
+}
+.posts-theme h3 {
+	@apply text-xl text-black font-bold;
+}
+
+.posts-theme h4 {
+	@apply text-base text-black font-bold;
+}
+
+.posts-theme img {
+	@apply select-none pointer-events-none;
+}
+
+.posts-theme p {
+	@apply text-base;
+}
+
+.posts-theme i {
+	@apply italic inline-block;
+}
