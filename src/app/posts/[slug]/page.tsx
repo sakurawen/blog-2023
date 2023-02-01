@@ -4,7 +4,6 @@ import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 import { format } from 'date-fns';
 import Link from 'next/link';
-import { HomeIcon } from '@heroicons/react/20/solid';
 
 const getPostsWithSlug = async (slug: string) => {
 	const result = await fs.readFile(`./posts/${slug}.mdx`);
@@ -19,6 +18,7 @@ const getPostsWithSlug = async (slug: string) => {
 	});
 	return mdxSource;
 };
+
 
 const Posts = async ({
 	params: { slug },
