@@ -6,7 +6,7 @@ import { format } from 'date-fns';
 import Link from 'next/link';
 
 const getPostsWithSlug = async (slug: string) => {
-	const result = await fs.readFile(`./posts/${slug}.mdx`);
+	const result = await fs.readFile(`posts/${slug}.mdx`);
 	const { content, data } = matter(result);
 	data.date = format(new Date(data.date), 'yyyy-MM-dd');
 	const mdxSource = await serialize(content, {
