@@ -5,8 +5,8 @@ import { serialize } from 'next-mdx-remote/serialize';
 import { format } from 'date-fns';
 import Link from 'next/link';
 
-const getPostsWithSlug = async (slug: string) => {
-	const result = await fs.readFile(`posts/${slug}.mdx`);
+const getPostsWithPath = async (path: string) => {
+	const result = await fs.readFile(path);
 	const { content, data } = matter(result);
 	data.date = format(new Date(data.date), 'yyyy-MM-dd');
 	const mdxSource = await serialize(content, {
@@ -27,7 +27,8 @@ const Posts = async ({
 		slug: string;
 	};
 }) => {
-	const source = await getPostsWithSlug(slug);
+  const path = `posts/${slug}.mdx`
+	const source = await getPostsWithPath(path);
 	return (
 		<>
 			<div className='mb-12'>
