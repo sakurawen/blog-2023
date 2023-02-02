@@ -1,7 +1,7 @@
 const BlogHead = () => {
 	return (
 		<>
-			<title>行走随心 | ソーシャルファイヤーウッドさんのブログ</title>
+			<title>人世流浪</title>
 		</>
 	);
 };

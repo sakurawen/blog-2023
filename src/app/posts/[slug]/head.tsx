@@ -10,7 +10,7 @@ const PostsHead = ({
 	const title = list.find((item) => item.key === slug);
 	return (
 		<>
-			<title>{`${title?.title} | ソーシャルファイヤーウッドさんのブログ`}</title>
+			<title>{`${title?.title||'404 not found'}`}</title>
 		</>
 	);
 };
