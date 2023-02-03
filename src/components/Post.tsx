@@ -2,7 +2,7 @@
 
 import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote';
 
-const Posts = ({ source }: { slug: string; source: MDXRemoteProps }) => {
+const Posts = ({ source }: { source: MDXRemoteProps }) => {
 	return (
 		<div>
 			<article className='posts-theme'>

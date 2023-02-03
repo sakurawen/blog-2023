@@ -2,10 +2,6 @@ import Link from 'next/link';
 import list from '@/data';
 import Image from 'next/image';
 
-/**
- * 博客首页
- * @returns
- */
 const Blog = () => {
 	return (
 		<div className='sm:pt-24 pt-12 space-y-6 relative px-4'>
@@ -36,7 +32,7 @@ const Blog = () => {
 						<Link
 							href={`/posts/${item.key}`}
 							as={`/posts/${item.key}`}
-							className='block hover:text-black pb-6 opacity-80 hover:opacity-100 transition cursor-pointer'
+							className='block hover:text-black mb-6 opacity-80 hover:opacity-100 transition cursor-pointer'
 							key={item.key}>
 							<h2 className='text-base overflow-hidden overflow-ellipsis whitespace-nowrap'>{item.title}</h2>
 							<span className='text-xs text-[#555555]'>{item.fmtDate}</span>

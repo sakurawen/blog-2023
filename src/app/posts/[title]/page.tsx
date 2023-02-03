@@ -9,14 +9,14 @@ import { notFound } from 'next/navigation';
 export const generateStaticParams = async () => {
 	const files = await fs.readdir('posts');
 	const paths = files.map((i) => ({
-		slug: i.replace('.mdx', ''),
+		title: i.replace('.mdx', ''),
 	}));
 	return paths;
 };
 
-const getPostsWithSlug = async (slug: string) => {
+const getPostsWithTitle = async (title: string) => {
 	try {
-		const result = await fs.readFile(`posts/${slug}.mdx`);
+		const result = await fs.readFile(`posts/${title}.mdx`);
 		const { content, data } = matter(result);
 		data.date = format(new Date(data.date), 'yyyy-MM-dd');
 		const mdxSource = await serialize(content, {
@@ -33,13 +33,13 @@ const getPostsWithSlug = async (slug: string) => {
 };
 
 const Posts = async ({
-	params: { slug },
+	params: { title },
 }: {
 	params: {
-		slug: string;
+		title: string;
 	};
 }) => {
-	const source = await getPostsWithSlug(slug);
+	const source = await getPostsWithTitle(title);
 	return (
 		<>
 			<div className='mb-12'>
@@ -51,7 +51,6 @@ const Posts = async ({
 			</div>
 			<Post
 				source={source}
-				slug={slug}
 			/>
 		</>
 	);
