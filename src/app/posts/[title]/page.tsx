@@ -1,8 +1,8 @@
 import Post from '@/components/Post';
+import { format } from 'date-fns';
 import fs from 'fs/promises';
 import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
-import { format } from 'date-fns';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 

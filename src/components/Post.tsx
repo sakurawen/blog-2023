@@ -6,9 +6,7 @@ const Posts = ({ source }: { source: MDXRemoteProps }) => {
 	return (
 		<div>
 			<article className='posts-theme'>
-				<MDXRemote
-					{...source}
-					components={{}}></MDXRemote>
+				<MDXRemote {...source} />
 			</article>
 		</div>
 	);

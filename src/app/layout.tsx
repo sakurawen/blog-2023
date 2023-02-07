@@ -37,7 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				/>
 				<meta
 					name='description'
-					content='人世流浪'
+					content='大文豪的博客'
 				/>
 				<meta
 					content='width=device-width, initial-scale=1'

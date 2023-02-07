@@ -1,6 +1,8 @@
+'use client';
 import Link from 'next/link';
 import list from '@/data';
 import Image from 'next/image';
+import Links from './links';
 
 const Blog = () => {
 	return (
@@ -12,9 +14,18 @@ const Blog = () => {
 						<br />
 						享受着辛酸。
 					</h2>
-					<p>这里就是我心中想要的大道至简</p>
+					<div className='flex flex-col justify-between'>
+						<div>
+							<p>
+								需要有一个地方可以让我随便发癫，
+								<br />
+								于是有了这个博客。
+							</p>
+						</div>
+						<Links />
+					</div>
 				</div>
-				<div className='relative sm:block hidden w-36 h-36 mb-4 sm:w-[240px] sm:h-[240px]'>
+				<div className='relative sm:block hidden w-36 h-36 sm:w-[240px] sm:h-[240px]'>
 					<Image
 						src='/head.jpg'
 						className=' select-none pointer-events-none'
