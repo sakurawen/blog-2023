@@ -17,7 +17,7 @@ const Blog = () => {
 					<div className='flex flex-col justify-between'>
 						<div>
 							<p>
-								需要有一个地方可以让我随便发癫，
+								需要有个地方可以随便聊聊，
 								<br />
 								于是有了这个博客。
 							</p>

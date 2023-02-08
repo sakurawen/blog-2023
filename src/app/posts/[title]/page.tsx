@@ -1,10 +1,11 @@
-import Post from '@/components/Post';
+import Post from '@/components/Posts/Post';
 import { format } from 'date-fns';
 import fs from 'fs/promises';
 import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import Commonts from '@/components/Comments';
 
 export const generateStaticParams = async () => {
 	const files = await fs.readdir('posts');
@@ -49,9 +50,8 @@ const Posts = async ({
 					<span className='text-lg font-bold'>Wen&apos; Blog</span>
 				</Link>
 			</div>
-			<Post
-				source={source}
-			/>
+			<Post source={source} />
+			<Commonts />
 		</>
 	);
 };
