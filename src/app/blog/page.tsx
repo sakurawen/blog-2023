@@ -3,7 +3,7 @@ import Link from 'next/link';
 import list from '@/data';
 import Image from 'next/image';
 import Links from './links';
-
+.
 const Blog = () => {
 	return (
 		<div className='sm:pt-24 pt-12 space-y-6 relative px-4'>
