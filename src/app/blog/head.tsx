@@ -1,7 +1,7 @@
 const BlogHead = () => {
 	return (
 		<>
-			<title>Wen&apos; Blog</title>
+			<title>Wen&apos;s Blog</title>
 		</>
 	);
 };
