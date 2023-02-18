@@ -4,7 +4,7 @@
 
 body,
 html {
-	@apply selection:bg-gray-400/20 selection:text-black h-full w-full;
+	@apply selection:bg-light-main/10 selection:text-light-main h-full w-full text-stone-800;
 }
 
 .posts-theme {

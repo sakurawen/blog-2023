@@ -1,7 +1,7 @@
 'use client';
 import { Icon } from '@iconify/react';
-import Link from 'next/link';
 import cx from 'classnames';
+import Link from 'next/link';
 
 type LinkItem = {
 	title: string;
@@ -37,7 +37,7 @@ const links: LinkItem[] = [
 
 const Links = () => {
 	return (
-		<div className='flex items-center space-x-2 mt-8'>
+		<div className='flex items-center space-x-2 !mt-6'>
 			{links.map((link) => {
 				return (
 					<Link
@@ -45,7 +45,7 @@ const Links = () => {
 						target={link.target}
 						href={link.url}>
 						<Icon
-							className={cx('text-gray-300  w-6 h-6', link.hoverClassnames)}
+							className={cx('text-gray-500  w-6 h-6', link.hoverClassnames)}
 							icon={link.icon}
 						/>
 					</Link>

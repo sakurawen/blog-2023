@@ -46,7 +46,7 @@ const Posts = async ({
 			<div className='mb-12'>
 				<Link
 					href={'/blog'}
-					className='inline-flex justify-center px-1 py-0.5 rounded hover:bg-gray-100 text-black transition items-center '>
+					className='inline-flex justify-center px-1 py-0.5 rounded hover:bg-light-main/10 hover:text-light-main text-black transition items-center '>
 					<span className='text-lg font-bold'>Wen&apos; Blog</span>
 				</Link>
 			</div>
