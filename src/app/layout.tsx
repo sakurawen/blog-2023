@@ -45,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				/>
 			</head>
 			<body className={harmonySans.className}>
-				<div className='min-h-full bg-linear-theme bg-fixed bg-no-repeat'>{children}</div>
+				<div className='min-h-full  bg-gradient-to-br from-sky-50 to-white bg-fixed bg-no-repeat'>{children}</div>
 			</body>
 		</html>
 	);

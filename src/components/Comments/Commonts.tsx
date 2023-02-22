@@ -14,7 +14,7 @@ const Commonts = () => {
 				reactionsEnabled='1'
 				emitMetadata='0'
 				input-position='bottom'
-				theme='preferred_color_scheme'
+				theme='light_protanopia'
 				lang='zh-CN'
 			/>
 		</div>

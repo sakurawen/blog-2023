@@ -17,24 +17,14 @@ const Blog = () => {
 						</h2>
 						<div className='flex flex-col justify-between'>
 							<p>
-								需要有个地方说说话，
+								上面这句话是歌曲《还愿》中，
 								<br />
-								于是有了这个博客。
+								我最喜欢的一句歌词。
 							</p>
 						</div>
 					</div>
 					<Links />
 				</div>
-				{/* <div className='relative sm:block hidden w-36 h-36 sm:w-[240px] sm:h-[240px]'>
-					<Image
-						src='/head.jpg'
-						className=' select-none pointer-events-none'
-						fill={true}
-						sizes='240,240'
-						priority={true}
-						alt='headimg'
-					/>
-				</div> */}
 			</div>
 			<div>
 				<h2 className='text-2xl pb-6 '>文章</h2>
@@ -43,12 +33,12 @@ const Blog = () => {
 						<Link
 							href={`/posts/${item.key}`}
 							as={`/posts/${item.key}`}
-							className='block group  mb-6  text-gray-700 transition cursor-pointer'
+							className='block group mb-6 text-gray-800 transition cursor-pointer'
 							key={item.key}>
-							<h2 className='text-base group-hover:text-light-main overflow-hidden overflow-ellipsis whitespace-nowrap'>
+							<h2 className='text-base group-hover:text-sky-800 overflow-hidden overflow-ellipsis whitespace-nowrap'>
 								{item.title}
 							</h2>
-							<span className='text-xs group-hover:text-light-main '>{item.fmtDate}</span>
+							<span className='text-xs group-hover:text-sky-800 '>{item.fmtDate}</span>
 						</Link>
 					);
 				})}
