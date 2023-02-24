@@ -14,10 +14,12 @@ const withMDX = nextMdx({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	reactStrictMode: true,
-	// swcMinify: true,
+	swcMinify: true,
 	pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
 	experimental: {
 		appDir: true,
+		mdxRs: true,
+		typedRoutes: true,
 	},
 };
 

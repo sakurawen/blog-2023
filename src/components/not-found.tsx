@@ -11,7 +11,7 @@ const NotFound = () => {
 					但是现在不是了。
 				</p>
 				<Link
-					href='/blog'
+					href="/blog"
 					className='inline-block bg-gray-200 hover:bg-gray-300  text-black py-1 px-2 text-center mt-4 rounded'>
 					返回首页
 				</Link>

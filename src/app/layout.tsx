@@ -1,5 +1,5 @@
 import './globals.css';
-import localFont from '@next/font/local';
+import localFont from 'next/font/local';
 
 const harmonySans = localFont({
 	src: [

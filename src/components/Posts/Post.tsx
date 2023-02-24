@@ -1,5 +1,4 @@
 'use client';
-
 import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote';
 import Code from '@/components/mdx/Code';
 
