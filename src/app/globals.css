@@ -4,13 +4,13 @@
 
 body,
 html {
-	@apply selection:bg-sky-600/10 selection:text-sky-800 h-full w-full text-gray-800;
+  @apply selection:bg-sky-600/10 selection:text-sky-800 h-full w-full text-gray-800;
 }
 pre {
-	@apply selection:bg-white/20 selection:text-white;
+  @apply selection:bg-white/20 selection:text-white;
 }
 
 .posts-theme {
-	@apply prose;
-	position: relative;
+  @apply prose;
+  position: relative;
 }
