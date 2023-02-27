@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "pnpm gen && next dev",
-    "build": "pnpm gen && next build",
+    "dev": "cross-env NODE_ENV=development conc \"pnpm gen\"  \"next dev\"",
+    "build": "cross-env NODE_ENV=production pnpm gen && next build",
     "start": "next start",
     "lint": "next lint",
-    "lint-fix":"eslint . --fix",
-    "gen": "node generate-posts.mjs"
+    "lint-fix": "eslint . --fix",
+    "gen": "node ./generate.js"
   },
   "dependencies": {
     "@giscus/react": "^2.2.6",
@@ -36,8 +36,11 @@
   "devDependencies": {
     "@iconify/react": "^4.1.0",
     "@mdx-js/mdx": "^2.2.1",
+    "@types/fs-extra": "^11.0.1",
     "@types/mdx": "^2.0.3",
     "autoprefixer": "^10.4.13",
+    "concurrently": "^7.6.0",
+    "cross-env": "^7.0.3",
     "fs-extra": "^11.1.0",
     "gray-matter": "^4.0.3",
     "postcss": "^8.4.21",
