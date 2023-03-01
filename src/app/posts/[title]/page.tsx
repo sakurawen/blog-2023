@@ -1,11 +1,9 @@
-import Post from '@/components/Posts/Post';
+import Commonts from '@/components/Comments';
 import { format } from 'date-fns';
 import fs from 'fs/promises';
-import matter from 'gray-matter';
-import { serialize } from 'next-mdx-remote/serialize';
+import { compileMDX } from 'next-mdx-remote/rsc';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import Commonts from '@/components/Comments';
 
 export const generateStaticParams = async () => {
   const files = await fs.readdir('posts');
@@ -18,17 +16,23 @@ export const generateStaticParams = async () => {
 const getPostsWithTitle = async (title: string) => {
   try {
     const result = await fs.readFile(`posts/${title}.mdx`);
-    const { content, data } = matter(result);
-    data.date = format(new Date(data.date), 'yyyy-MM-dd');
-    const mdxSource = await serialize(content, {
-      mdxOptions: {
-        remarkPlugins: [],
-        rehypePlugins: [],
+    const { content, frontmatter } = await compileMDX<{
+      title: string;
+      date: number | Date;
+      [key: string]: any;
+    }>({
+      source: result.toString(),
+      options: {
+        parseFrontmatter: true,
       },
-      scope: data,
     });
-    return mdxSource;
-  } catch {
+    frontmatter.fmtData = format(frontmatter.date, 'yyyy-MM-dd');
+    return {
+      content,
+      frontmatter,
+    };
+  } catch (e){
+    console.log(e)
     notFound();
   }
 };
@@ -36,11 +40,11 @@ const getPostsWithTitle = async (title: string) => {
 const Posts = async ({
   params: { title },
 }: {
-	params: {
-		title: string;
-	};
+  params: {
+    title: string;
+  };
 }) => {
-  const source = await getPostsWithTitle(title);
+  const { content, frontmatter } = await getPostsWithTitle(title);
   return (
     <>
       <div className='mb-12'>
@@ -50,7 +54,11 @@ const Posts = async ({
           <span className='text-lg font-bold'>Wen&apos; Blog</span>
         </Link>
       </div>
-      <Post source={source} />
+      <article className='posts-theme'>
+        <h1>{frontmatter.title}</h1>
+        <p>{frontmatter.fmtData}</p>
+        {content}
+      </article>
       <Commonts />
     </>
   );
