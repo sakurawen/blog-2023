@@ -38,11 +38,18 @@ console.log('generate posts data:', process.env.NODE_ENV);
 const isDev = process.env.NODE_ENV === 'development';
 if (isDev) {
   let timer = null;
-  fs.watch(postsDir, {}, () => {
+
+  const watcher = fs.watch(postsDir, {}, () => {
     clearTimeout(timer);
     timer = setTimeout(() => {
       console.log('posts dir change!');
       generate();
     }, 50);
+  });
+  
+  process.on('SIGINT', () => {
+    console.log('stop posts generate watcher');
+    watcher.close();
+    process.exit(0);
   });
 }
