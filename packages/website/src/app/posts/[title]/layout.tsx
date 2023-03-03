@@ -1,4 +1,4 @@
-import { list } from '@/data';
+import data from '@packages/generate';
 
 export const generateMetadata = ({
   params: { title },
@@ -7,7 +7,7 @@ export const generateMetadata = ({
 		title: string;
 	};
 }) => {
-  const post = list.find((item) => item.key === title);
+  const post = data.list.find((item) => item.key === title);
   return {
     title: post?.title ? `${post?.title} —— Wen's Blog` : "Wen's Blog",
   };

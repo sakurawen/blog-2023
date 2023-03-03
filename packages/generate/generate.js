@@ -1,9 +1,8 @@
 const { compareDesc, format } = require('date-fns');
 const fs = require('fs-extra');
 const path = require('path');
-
 const matter = require('gray-matter');
-const postsDir = path.resolve(__dirname, 'posts');
+const postsDir = path.resolve(process.cwd(), '../posts');
 
 const getPostsPaths = async () => {
   try {
@@ -29,11 +28,12 @@ const generate = async () => {
   const fmt = {
     list: sortResult,
   };
-  fs.writeFileSync(path.join(__dirname, 'src/data/data.json'), JSON.stringify(fmt), { encoding: 'utf-8' });
+  fs.writeFileSync(path.join(__dirname, '/data/data.json'), JSON.stringify(fmt), { encoding: 'utf-8' });
 };
 
 generate();
-console.log('generate posts data');
+
+console.log('generate posts data:', process.env.NODE_ENV);
 
 const isDev = process.env.NODE_ENV === 'development';
 if (isDev) {

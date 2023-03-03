@@ -1,0 +1,24 @@
+{
+  "name": "@packages/generate",
+  "version": "1.0.0",
+  "description": "",
+  "exports": {
+    ".": {
+      "import": "./data/data.json"
+    }
+  },
+  "types": "./index.d.ts",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production node generate.js",
+    "dev": "cross-env NODE_ENV=development node generate.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "date-fns": "^2.29.3",
+    "fs-extra": "^11.1.0",
+    "gray-matter": "^4.0.3"
+  }
+}
