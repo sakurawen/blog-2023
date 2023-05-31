@@ -18,8 +18,8 @@ export const generateStaticParams = async () => {
 
 const getPostsWithKey = async (key: string) => {
   try {
-    const filePath = data.map[key].filePath;
-    const result = await fs.readFile(path.resolve(process.cwd(), filePath));
+    const { year, key: postKey } = data.map[key];
+    const result = await fs.readFile(path.resolve(process.cwd(), `../posts/${year}/${postKey}.md`));
     const { content, frontmatter } = await compileMDX<{
       title: string;
       date: number | Date;
@@ -50,7 +50,7 @@ const Posts = async ({
 }) => {
   const { content, frontmatter } = await getPostsWithKey(key);
   return (
-    <div className="pb-12 mt-12">
+    <div className="mt-12 pb-12">
       <div className="rounded-lg ">
         <article className="posts-theme">
           <h1>{frontmatter.title}</h1>

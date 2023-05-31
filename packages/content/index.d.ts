@@ -12,7 +12,7 @@ declare module '@packages/content' {
     map: Record<
       string,
       {
-        filePath: string;
+        year: string;
         title: string;
         date: string;
         fmtDate: string;

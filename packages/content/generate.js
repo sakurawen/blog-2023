@@ -33,7 +33,7 @@ const getPostsData = async (postsDir) => {
       meta.data.key = key;
       result.push(meta.data);
       postsMap[key] = {
-        filePath,
+        year: postsDir,
         ...meta.data,
       };
     });
