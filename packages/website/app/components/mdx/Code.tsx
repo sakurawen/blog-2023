@@ -1,5 +1,4 @@
-import HighLight, { defaultProps, Language } from 'prism-react-renderer';
-import theme from 'prism-react-renderer/themes/vsDark';
+import { Highlight, themes } from 'prism-react-renderer';
 import { ReactNode } from 'react';
 
 type CodeProps = {
@@ -8,14 +7,14 @@ type CodeProps = {
 };
 
 const Code = ({ className, children }: CodeProps) => {
-  const lang = (className?.replace('language-', '') || '') as Language;
+  const lang = (className?.replace('language-', '') || '') as string;
   const code = children as string;
   if (!lang) {
     return <code>{children}</code>;
   }
   return (
     <div>
-      <HighLight {...defaultProps} code={code} theme={theme} language={lang}>
+      <Highlight code={code} theme={themes.vsDark} language={lang}>
         {({ tokens, getLineProps, getTokenProps }) => (
           <pre className="!p-0 !text-sm">
             {tokens.map((line, i) => (
@@ -27,7 +26,7 @@ const Code = ({ className, children }: CodeProps) => {
             ))}
           </pre>
         )}
-      </HighLight>
+      </Highlight>
     </div>
   );
 };
