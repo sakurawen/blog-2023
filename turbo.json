@@ -8,7 +8,7 @@
       ],
       "outputs": [
         "website/.next/**",
-        "generate/data/**"
+        "content/data.json"
       ]
     },
     "dev": {

@@ -1,17 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 const tailwindcssConfig = {
-  content: [
-    './src/app/**/*.{js,ts,jsx,tsx}',
-    './src/pages/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}',
-  ],
+  content: ['./app/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       maxWidth: {
-        content: '576px',
+        content: '648px',
       },
       width: {
-        content: '576px',
+        content: '648px',
       },
     },
   },

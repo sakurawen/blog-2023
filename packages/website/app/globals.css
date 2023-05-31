@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .posts-theme {
+    @apply prose;
+    position: relative;
+  }
+}
+
+html,
+body {
+  @apply h-full  w-full text-gray-800 selection:bg-emerald-300/60 selection:text-gray-800;
+}
+
+pre {
+  @apply selection:bg-white/20 selection:text-white;
+}
