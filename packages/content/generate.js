@@ -64,13 +64,19 @@ const isDev = process.env.NODE_ENV === 'development';
 if (isDev) {
   let timer = null;
 
-  const watcher = fs.watch(postsRootDir, {}, () => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      console.log('posts dir change!');
-      generate();
-    }, 50);
-  });
+  const watcher = fs.watch(
+    postsRootDir,
+    {
+      recursive: true,
+    },
+    () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        console.log('posts dir change!');
+        generate();
+      }, 50);
+    },
+  );
 
   process.on('SIGINT', () => {
     console.log('stop posts generate watcher');

@@ -76,7 +76,7 @@ function Grids({
                 cy={gyo}
                 r={2}
                 opacity={opacity}
-                className="bg-transparent fill-stone-300 dark:fill-stone-700"
+                className="bg-transparent fill-emerald-400 dark:fill-stone-700"
               />
             </pattern>
           );

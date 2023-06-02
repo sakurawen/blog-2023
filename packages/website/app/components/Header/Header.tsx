@@ -23,7 +23,7 @@ const Header = () => {
           </div>
           <div className="space-y-4">
             <h2 className="text-2xl font-bold">Wen</h2>
-            <p className='text-sm md:text-base'>不需要太复杂，简简单单就好。</p>
+            <p className="text-sm md:text-base">不需要太复杂，简简单单就好。</p>
             <Links />
           </div>
         </div>
@@ -33,8 +33,12 @@ const Header = () => {
               prefetch
               className={(active) =>
                 clsx(
-                  'relative block  py-1 after:absolute after:bottom-0 after:block after:h-[2px] after:w-full after:origin-center after:transform after:bg-emerald-500 after:transition-all hover:text-gray-800',
-                  [active ? '!text-emerald-500 after:scale-x-100' : 'after:scale-0'],
+                  'relative block cursor-default  py-1 after:absolute after:bottom-0 after:block after:h-[2px] after:w-full after:origin-center after:transform after:bg-emerald-500 after:transition-all hover:text-gray-800',
+                  [
+                    active
+                      ? '!text-emerald-500 after:scale-x-100'
+                      : 'after:scale-0 hover:after:scale-100 hover:after:bg-gray-600',
+                  ],
                 )
               }
               href="/"
@@ -47,8 +51,12 @@ const Header = () => {
               prefetch
               className={(active) =>
                 clsx(
-                  'relative block  py-1 after:absolute after:bottom-0 after:block after:h-[2px] after:w-full after:origin-center after:transform after:bg-emerald-500 after:transition-all hover:text-gray-800',
-                  [active ? '!text-emerald-500 after:scale-x-100' : 'after:scale-0'],
+                  'relative block cursor-default  py-1 after:absolute after:bottom-0 after:block after:h-[2px] after:w-full after:origin-center after:transform after:bg-emerald-500 after:transition-all hover:text-gray-800',
+                  [
+                    active
+                      ? '!text-emerald-500 after:scale-x-100'
+                      : 'after:scale-0 hover:after:scale-100 hover:after:bg-gray-600',
+                  ],
                 )
               }
               href={'/posts' as Route}

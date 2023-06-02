@@ -1,13 +1,11 @@
 import Comments from '@/app/components/Comments';
 import { format } from 'date-fns';
 import fs from 'fs/promises';
-import { ArrowBigLeft } from 'lucide-react';
-import { Route } from 'next';
 import { compileMDX } from 'next-mdx-remote/rsc';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import path from 'path';
 import data from '@packages/content';
+import Code from '@/app/components/MDXComponents/Code';
 
 export const generateStaticParams = async () => {
   const paths = Object.values(data.map).map((title) => ({
@@ -26,6 +24,9 @@ const getPostsWithKey = async (key: string) => {
       [key: string]: any;
     }>({
       source: result.toString(),
+      components: {
+        code: Code,
+      },
       options: {
         parseFrontmatter: true,
       },
