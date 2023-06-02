@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import { Highlight, themes } from 'prism-react-renderer';
 import { ReactNode } from 'react';
 
@@ -7,7 +7,7 @@ type CodeProps = {
   className?: string;
 };
 
-const Code = ({ className, children }: CodeProps) => {
+export default function Code({ className, children }: CodeProps) {
   const lang = (className?.replace('language-', '') || '') as string;
   const code = children as string;
   if (!lang) {
@@ -17,7 +17,7 @@ const Code = ({ className, children }: CodeProps) => {
     <div>
       <Highlight code={code} theme={themes.vsDark} language={lang}>
         {({ tokens, getLineProps, getTokenProps }) => (
-          <pre className="!p-0 !my-0 !text-sm">
+          <pre className="!my-0 !p-0 !text-sm">
             {tokens.map((line, i) => (
               <div {...getLineProps({ line })} key={i}>
                 {line.map((token, key) => (
@@ -30,6 +30,4 @@ const Code = ({ className, children }: CodeProps) => {
       </Highlight>
     </div>
   );
-};
-
-export default Code;
+}

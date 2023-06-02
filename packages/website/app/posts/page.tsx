@@ -4,12 +4,10 @@ export const metadata = {
   title: "Wen's Blog Posts",
 };
 
-const Posts = () => {
+export default function Posts() {
   return (
     <div>
       <List />
     </div>
   );
-};
-
-export default Posts;
+}

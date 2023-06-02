@@ -6,7 +6,7 @@ import NavLink from '@/app/components/NavLink';
 import clsx from 'clsx';
 import { Background } from './Background';
 
-const Header = () => {
+export default function Header() {
   return (
     <div className="relative overflow-hidden border-b border-emerald-100 bg-emerald-50/40 px-2">
       <div className="relative z-50 mx-auto max-w-xl">
@@ -69,6 +69,4 @@ const Header = () => {
       <Background />
     </div>
   );
-};
-
-export default Header;
+}

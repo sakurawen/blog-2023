@@ -7,14 +7,14 @@ import path from 'path';
 import data from '@packages/content';
 import Code from '@/app/components/MDXComponents/Code';
 
-export const generateStaticParams = async () => {
+export async function generateStaticParams() {
   const paths = Object.values(data.map).map((title) => ({
     title,
   }));
   return paths;
-};
+}
 
-const getPostsWithKey = async (key: string) => {
+async function getPostsWithKey(key: string) {
   try {
     const { year, key: postKey } = data.map[key];
     const result = await fs.readFile(path.resolve(process.cwd(), `../posts/${year}/${postKey}.md`));
@@ -40,15 +40,15 @@ const getPostsWithKey = async (key: string) => {
     console.log(e);
     notFound();
   }
-};
+}
 
-const Posts = async ({
+export default async function Posts({
   params: { key },
 }: {
   params: {
     key: string;
   };
-}) => {
+}) {
   const { content, frontmatter } = await getPostsWithKey(key);
   return (
     <div className="mt-12 pb-12">
@@ -62,6 +62,4 @@ const Posts = async ({
       <Comments />
     </div>
   );
-};
-
-export default Posts;
+}

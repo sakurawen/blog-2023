@@ -1,7 +1,7 @@
 'use client';
 import Giscus from '@giscus/react';
 
-const Commonts = () => {
+export default function Comments() {
   return (
     <div className="mt-16">
       <Giscus
@@ -18,5 +18,4 @@ const Commonts = () => {
       />
     </div>
   );
-};
-export default Commonts;
+}

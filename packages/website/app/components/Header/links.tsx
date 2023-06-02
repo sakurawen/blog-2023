@@ -29,7 +29,7 @@ const links: LinkItem[] = [
   },
 ];
 
-const Links = () => {
+export default function Links() {
   return (
     <div className="flex items-center space-x-2">
       {links.map((link) => {
@@ -46,6 +46,4 @@ const Links = () => {
       })}
     </div>
   );
-};
-
-export default Links;
+}

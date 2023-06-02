@@ -2,7 +2,7 @@ import data from '@packages/content';
 import { Route } from 'next';
 import Link from 'next/link';
 
-const Posts = () => {
+export default function Posts() {
   return (
     <div>
       {data.list.map((item) => {
@@ -26,6 +26,4 @@ const Posts = () => {
       })}
     </div>
   );
-};
-
-export default Posts;
+}

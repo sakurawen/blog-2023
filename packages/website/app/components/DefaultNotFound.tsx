@@ -1,7 +1,7 @@
 import { Route } from 'next';
 import Link from 'next/link';
 
-const DefaultNotFound = () => {
+export default function DefaultNotFound() {
   return (
     <div className="flex h-full w-full items-center justify-center">
       <div className="pt-8 text-center">
@@ -20,6 +20,4 @@ const DefaultNotFound = () => {
       </div>
     </div>
   );
-};
-
-export default DefaultNotFound;
+}
