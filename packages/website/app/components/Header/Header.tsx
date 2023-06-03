@@ -9,7 +9,8 @@ import { Background } from './Background';
 export default function Header() {
   return (
     <div className="relative overflow-hidden border-b border-emerald-100 bg-emerald-50/40 px-2">
-      <div className="relative z-50 mx-auto max-w-xl">
+      <Background />
+      <div className="relative z-30 mx-auto max-w-xl">
         <div className="flex py-12">
           <div className="mr-6 md:mr-12">
             <Image
@@ -66,7 +67,6 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <Background />
     </div>
   );
 }
