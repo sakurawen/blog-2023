@@ -29,6 +29,7 @@ const getPostsData = async (postsDir) => {
       const markdown = fs.readFileSync(filePath, 'utf-8');
       const meta = matter(markdown);
       const key = filename.replace('.md', '');
+      if (meta.data.hidden === true) return;
       meta.data.fmtDate = format(meta.data.date, 'yyyy-MM-dd');
       meta.data.key = key;
       result.push(meta.data);

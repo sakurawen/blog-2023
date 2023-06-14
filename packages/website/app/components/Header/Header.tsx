@@ -11,8 +11,8 @@ export default function Header() {
     <div className="relative overflow-hidden border-b border-emerald-100 bg-emerald-50/40 px-2">
       <Background />
       <div className="relative z-30 mx-auto max-w-xl">
-        <div className="flex py-12">
-          <div className="mr-6 md:mr-12">
+        <div className="flex px-2 py-12">
+          {/* <div className="mr-6 md:mr-12">
             <Image
               className="rounded-full ring-1 ring-emerald-200"
               src="/avatar.jpg"
@@ -21,10 +21,18 @@ export default function Header() {
               height={120}
               alt="avatar"
             />
-          </div>
+          </div> */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold">Wen</h2>
-            <p className="text-sm md:text-base">不需要太复杂，简简单单就好。</p>
+            <h2 className="text-4xl font-bold">
+              Hello
+              <br />
+              I&apos;m Wen
+            </h2>
+            <p className="text-sm md:text-base">
+              你看那通天的巨塔，每时每刻都有人往下跳。
+              <br />
+              我小时候不懂，以为那是雪花。
+            </p>
             <Links />
           </div>
         </div>
