@@ -53,7 +53,7 @@ export default async function Posts({
   return (
     <div className="mt-12 pb-12">
       <div className="rounded-lg ">
-        <article className="posts-theme">
+        <article className="posts-theme px-2 xs:px-0">
           <h1>{frontmatter.title}</h1>
           <p>{frontmatter.fmtData}</p>
           {content}
