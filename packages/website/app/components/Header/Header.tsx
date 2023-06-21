@@ -12,17 +12,7 @@ export default function Header() {
       <Background />
       <div className="relative z-30 mx-auto max-w-xl">
         <div className="flex px-2 py-12">
-          {/* <div className="mr-6 md:mr-12">
-            <Image
-              className="rounded-full ring-1 ring-emerald-200"
-              src="/avatar.jpg"
-              width={120}
-              priority
-              height={120}
-              alt="avatar"
-            />
-          </div> */}
-          <div className="space-y-4">
+          <div className="space-y-4 select-none">
             <h2 className="text-4xl font-bold">
               Hello
               <br />
@@ -42,7 +32,7 @@ export default function Header() {
               prefetch
               className={(active) =>
                 clsx(
-                  'relative block cursor-default  py-1 after:absolute after:bottom-0 after:block after:h-[2px] after:w-full after:origin-center after:transform after:bg-emerald-500 after:transition-all hover:text-gray-800',
+                  'relative select-none block cursor-default  py-1 after:absolute after:bottom-0 after:block after:h-[2px] after:w-full after:origin-center after:transform after:bg-emerald-500 after:transition-all hover:text-gray-800',
                   [
                     active
                       ? '!text-emerald-500 after:scale-x-100'
@@ -60,7 +50,7 @@ export default function Header() {
               prefetch
               className={(active) =>
                 clsx(
-                  'relative block cursor-default  py-1 after:absolute after:bottom-0 after:block after:h-[2px] after:w-full after:origin-center after:transform after:bg-emerald-500 after:transition-all hover:text-gray-800',
+                  'relative select-none block cursor-default  py-1 after:absolute after:bottom-0 after:block after:h-[2px] after:w-full after:origin-center after:transform after:bg-emerald-500 after:transition-all hover:text-gray-800',
                   [
                     active
                       ? '!text-emerald-500 after:scale-x-100'

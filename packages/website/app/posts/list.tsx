@@ -16,7 +16,7 @@ export default function Posts() {
                     <Link href={`/posts/${p.key}` as Route} className="cursor-default hover:text-gray-950">
                       {p.title}
                     </Link>
-                    <span className="ml-2 text-xs text-gray-400">{p.fmtDate}</span>
+                    <span className="ml-2 text-xs text-gray-400 select-none">{p.fmtDate}</span>
                   </li>
                 );
               })}

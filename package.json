@@ -13,12 +13,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "prettier": "^2.8.4",
-    "prettier-plugin-tailwindcss": "^0.2.8",
-    "turbo": "^1.9.4"
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.3.0",
+    "turbo": "^1.10.3"
   },
   "dependencies": {
-    "eslint": "8.33.0",
+    "eslint": "8.43.0",
     "typescript": "5.1.3"
   }
 }
