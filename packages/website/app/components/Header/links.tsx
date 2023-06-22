@@ -31,7 +31,7 @@ const links: LinkItem[] = [
 
 export default function Links() {
   return (
-    <div className="flex items-center space-x-2">
+    <div className="flex  items-center space-x-2.5">
       {links.map((link) => {
         return (
           <a
@@ -40,7 +40,7 @@ export default function Links() {
             href={link.url}
             className="group cursor-default rounded-md border border-transparent p-1 transition hover:border-gray-300 hover:bg-gray-100 hover:shadow-md"
           >
-            <Icon className="h-5 w-5 text-gray-400 transition group-hover:text-gray-800" icon={link.icon} />
+            <Icon className="h-6 w-6 opacity-60 transition group-hover:opacity-100" icon={link.icon} />
           </a>
         );
       })}

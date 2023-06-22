@@ -4,7 +4,7 @@
 
 @layer utilities {
   .posts-theme {
-    @apply prose;
+    @apply prose relative;
     position: relative;
   }
 }
