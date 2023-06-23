@@ -4,7 +4,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="mx-auto max-w-xl px-2 py-4">
+    <div className="mx-auto max-w-2xl px-2 py-4">
       <div className="flex gap-2">
         <a
           target="_blank"

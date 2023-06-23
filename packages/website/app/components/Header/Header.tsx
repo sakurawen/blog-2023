@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <div className="relative overflow-hidden border-b border-emerald-100 bg-emerald-50/40 px-2">
       <Background />
-      <div className="relative z-30 mx-auto max-w-xl">
+      <div className="relative z-30 mx-auto max-w-2xl">
         <div className="flex px-2 pt-12 pb-8">
           <div className="space-y-5 select-none">
             <h2 className="text-4xl font-bold">

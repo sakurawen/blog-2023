@@ -4,8 +4,7 @@
 
 @layer utilities {
   .posts-theme {
-    @apply prose relative;
-    position: relative;
+    @apply prose relative max-w-none;
   }
 }
 
