@@ -1,14 +1,14 @@
-'use client';
 import { Icon } from '@iconify/react';
 
-type LinkItem = {
+export type LinkItem = {
   title: string;
   url: string;
   icon: string;
   target: '_blank' | '_self';
+  text?: string;
 };
 
-const links: LinkItem[] = [
+export const links: LinkItem[] = [
   {
     title: 'github',
     url: 'https://github.com/sakurawen',
@@ -29,18 +29,23 @@ const links: LinkItem[] = [
   },
 ];
 
-export default function Links() {
+export type LinksProps = {
+  items: LinkItem[];
+};
+
+export default function Links({ items }: LinksProps) {
   return (
-    <div className="flex  items-center space-x-2.5">
-      {links.map((link) => {
+    <div className="flex  items-center space-x-2.5 select-none h-9">
+      {items.map((link) => {
         return (
           <a
             key={link.url}
             target={link.target}
             href={link.url}
-            className="group cursor-default rounded-md border border-transparent p-1 transition hover:border-gray-300 hover:bg-gray-100 hover:shadow-md"
+            className="group inline-flex cursor-default space-x-1 rounded-md border border-transparent p-1 transition hover:border-gray-200 hover:bg-gray-100"
           >
             <Icon className="h-6 w-6 opacity-60 transition group-hover:opacity-100" icon={link.icon} />
+            {link.text && <span>{link.text}</span>}
           </a>
         );
       })}
