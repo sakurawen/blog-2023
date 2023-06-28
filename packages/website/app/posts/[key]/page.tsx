@@ -51,7 +51,7 @@ export default async function Posts({
 }) {
   const { content, frontmatter } = await getPostsWithKey(key);
   return (
-    <div className="mt-8 pb-12">
+    <div className="mt-8 pt-16 pb-12">
       <div className="rounded-lg ">
         <article className="posts-theme px-2 xs:px-0">
           <h1>{frontmatter.title}</h1>

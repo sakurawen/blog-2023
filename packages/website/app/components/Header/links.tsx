@@ -1,4 +1,5 @@
 import { Icon } from '@iconify/react';
+import { clsx } from 'clsx';
 
 export type LinkItem = {
   title: string;
@@ -31,18 +32,19 @@ export const links: LinkItem[] = [
 
 export type LinksProps = {
   items: LinkItem[];
+  className?: string;
 };
 
-export default function Links({ items }: LinksProps) {
+export default function Links({ items, className }: LinksProps) {
   return (
-    <div className="flex  items-center space-x-2.5 select-none h-9">
+    <div className={clsx('flex h-9 select-none items-center space-x-2.5', className)}>
       {items.map((link) => {
         return (
           <a
             key={link.url}
             target={link.target}
             href={link.url}
-            className="group inline-flex cursor-default space-x-1 rounded-md border border-transparent p-1 transition hover:border-gray-200 hover:bg-gray-100"
+            className="group inline-flex cursor-default space-x-1 rounded-full border border-transparent p-1 transition hover:border-gray-200 hover:bg-gray-100"
           >
             <Icon className="h-6 w-6 opacity-60 transition group-hover:opacity-100" icon={link.icon} />
             {link.text && <span>{link.text}</span>}

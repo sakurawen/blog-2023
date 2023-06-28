@@ -15,24 +15,20 @@ export default function Header() {
       {
         title: 'home',
         url: '/',
-        text: '首页',
         icon: 'lucide:fan',
         target: '_self',
       },
       {
         title: 'blog',
         url: '/posts',
-        text: '博客',
         icon: 'lucide:book',
         target: '_self',
       },
       ...links,
     ];
     return (
-      <div className=" mx-auto max-w-2xl px-2 pt-12">
-        <div className="relative mx-auto inline-block  overflow-hidden rounded-lg bg-gray-50/80 px-2 py-1 ring-1 ring-gray-200">
-          <Links items={extraLinks} />
-        </div>
+      <div className="bg-white-50/80  fixed left-0 right-0 top-6 z-50 mx-auto  inline-block w-60 overflow-hidden rounded-full  bg-gradient-to-b from-gray-50/70 to-white/90 px-2 py-1 shadow-lg shadow-gray-800/5 ring-1 ring-gray-200 backdrop-blur-md">
+        <Links className='justify-center' items={extraLinks} />
       </div>
     );
   }
