@@ -39,8 +39,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={harmonySans.className}>
         <TopLoader color="#10b981" />
-        <Header />
-        <div className="relative min-h-full">{children}</div>
+        <div className="relative min-h-full">
+          <Header />
+          {children}
+        </div>
       </body>
     </html>
   );
