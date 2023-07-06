@@ -1,6 +1,6 @@
 import { Icon } from '@iconify/react';
 import { clsx } from 'clsx';
-import React from 'react'
+import React from 'react';
 
 export type LinkItem = {
   title: string;
@@ -8,6 +8,7 @@ export type LinkItem = {
   icon: string;
   target: '_blank' | '_self';
   text?: string;
+  className?: string;
 };
 
 export const links: LinkItem[] = [
@@ -16,18 +17,14 @@ export const links: LinkItem[] = [
     url: 'https://github.com/sakurawen',
     icon: 'lucide:github',
     target: '_blank',
-  },
-  {
-    title: 'bilibili',
-    url: 'https://space.bilibili.com/2940875/dynamic',
-    icon: 'lucide:tv',
-    target: '_blank',
+    className: 'w-6 h-6',
   },
   {
     title: 'weibo',
     url: 'https://weibo.com/u/6889020714',
-    icon: 'cib:sina-weibo',
+    icon: 'bi:sina-weibo',
     target: '_blank',
+    className: 'w-7 h-7',
   },
 ];
 
@@ -47,7 +44,10 @@ export default function Links({ items, className }: LinksProps) {
             href={link.url}
             className="group inline-flex cursor-default space-x-1 rounded-full border border-transparent p-1 transition hover:border-gray-200 hover:bg-gray-100"
           >
-            <Icon className="h-6 w-6 opacity-60 transition group-hover:opacity-100" icon={link.icon} />
+            <Icon
+              className={clsx('h-6 w-6 opacity-60 transition group-hover:opacity-100', link.className)}
+              icon={link.icon}
+            />
             {link.text && <span>{link.text}</span>}
           </a>
         );

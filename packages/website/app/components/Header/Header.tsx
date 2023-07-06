@@ -17,18 +17,20 @@ export default function Header() {
         url: '/',
         icon: 'lucide:fan',
         target: '_self',
+        className: 'w-6 h-6',
       },
       {
         title: 'blog',
         url: '/posts',
         icon: 'lucide:book',
         target: '_self',
+        className: 'w-6 h-6',
       },
       ...links,
     ];
     return (
       <div className="bg-white-50/80  fixed left-0 right-0 top-6 z-50 mx-auto  inline-block w-60 overflow-hidden rounded-full  bg-gradient-to-b from-gray-50/70 to-white/90 px-2 py-1 shadow-lg shadow-gray-800/5 ring-1 ring-gray-200 backdrop-blur-md">
-        <Links className='justify-center' items={extraLinks} />
+        <Links className="justify-center space-x-4" items={extraLinks} />
       </div>
     );
   }
