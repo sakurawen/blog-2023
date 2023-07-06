@@ -45,9 +45,9 @@ export default function Header() {
                 I&apos;m Wen
               </span>
               <Icon
-                style={{ animationDuration: '1.5s', animationDirection: 'reverse' }}
+                style={{ animationDuration: '2s', animationDirection: 'reverse' }}
                 icon="lucide:fan"
-                className="ml-2 inline-block h-8 w-8 animate-spin text-emerald-600"
+                className="inline-block h-8 w-8 animate-spin text-emerald-600/20"
               />
             </h2>
             <p className="text-sm md:text-base">

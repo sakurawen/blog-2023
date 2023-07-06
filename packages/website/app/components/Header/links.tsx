@@ -14,19 +14,19 @@ export const links: LinkItem[] = [
   {
     title: 'github',
     url: 'https://github.com/sakurawen',
-    icon: 'mdi:github',
-    target: '_blank',
-  },
-  {
-    title: 'weibo',
-    url: 'https://weibo.com/u/6889020714',
-    icon: 'bi:sina-weibo',
+    icon: 'lucide:github',
     target: '_blank',
   },
   {
     title: 'bilibili',
     url: 'https://space.bilibili.com/2940875/dynamic',
-    icon: 'tabler:brand-bilibili',
+    icon: 'lucide:tv',
+    target: '_blank',
+  },
+  {
+    title: 'weibo',
+    url: 'https://weibo.com/u/6889020714',
+    icon: 'cib:sina-weibo',
     target: '_blank',
   },
 ];
