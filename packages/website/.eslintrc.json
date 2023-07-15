@@ -2,7 +2,7 @@
   "extends": ["next/core-web-vitals"],
   "rules": {
     "indent": ["error", 2],
-    "semi": ["error","always"],
+    "semi": ["error", "always"],
     "@next/next/no-html-link-for-pages": 0
   }
 }
