@@ -1,8 +1,9 @@
+import Header from '@/app/components/Header';
+import localFont from 'next/font/local';
+import TopLoader from 'nextjs-toploader';
 import 'tailwindcss/tailwind.css';
 import './globals.css';
-import localFont from 'next/font/local';
-import Header from '@/app/components/Header';
-import TopLoader from 'nextjs-toploader';
+
 const harmonySans = localFont({
   src: [
     {
@@ -29,6 +30,7 @@ const harmonySans = localFont({
   display: 'swap',
 });
 
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html>
@@ -38,7 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </head>
       <body className={harmonySans.className}>
-        <TopLoader color="#10b981" />
+        <TopLoader color="#38bdf8" />
         <div className="relative min-h-full">
           <Header />
           {children}

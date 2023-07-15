@@ -12,6 +12,7 @@ export default function Comments() {
         mapping="pathname"
         strict="0"
         reactionsEnabled="1"
+        theme="light_tritanopia"
         emitMetadata="0"
         input-position="bottom"
         lang="zh-CN"

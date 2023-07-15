@@ -7,7 +7,6 @@ export type LinkItem = {
   icon: string;
   target: '_blank' | '_self';
   text?: string;
-  className?: string;
 };
 
 export const links: LinkItem[] = [
@@ -16,14 +15,6 @@ export const links: LinkItem[] = [
     url: 'https://github.com/sakurawen',
     icon: 'lucide:github',
     target: '_blank',
-    className: 'w-6 h-6',
-  },
-  {
-    title: 'weibo',
-    url: 'https://weibo.com/u/6889020714',
-    icon: 'bi:sina-weibo',
-    target: '_blank',
-    className: 'w-7 h-7',
   },
 ];
 
@@ -41,12 +32,9 @@ export default function Links({ items, className }: LinksProps) {
             key={link.url}
             target={link.target}
             href={link.url}
-            className="group inline-flex cursor-default space-x-1 rounded-full border border-transparent p-1 transition hover:border-gray-200 hover:bg-gray-100"
+            className="group inline-flex cursor-default space-x-1 rounded-lg border border-transparent p-1 transition hover:border-gray-200 hover:bg-gray-100"
           >
-            <Icon
-              className={clsx('h-6 w-6 opacity-60 transition group-hover:opacity-100', link.className)}
-              icon={link.icon}
-            />
+            <Icon className={clsx('h-6 w-6 opacity-60 transition group-hover:opacity-100')} icon={link.icon} />
             {link.text && <span>{link.text}</span>}
           </a>
         );
