@@ -1,6 +1,5 @@
 import { Icon } from '@iconify/react';
 import { clsx } from 'clsx';
-import React from 'react';
 
 export type LinkItem = {
   title: string;
