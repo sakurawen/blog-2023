@@ -10,7 +10,7 @@
 
 html,
 body {
-  @apply h-full  w-full text-gray-800 selection:bg-sky-300/20 selection:text-gray-800;
+  @apply h-full  w-full text-gray-800 selection:bg-blue-300/20 selection:text-gray-800;
 }
 
 pre {

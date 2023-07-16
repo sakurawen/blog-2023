@@ -25,12 +25,12 @@ export default function Header() {
     );
   }
   return (
-    <div className="relative overflow-hidden border-b border-sky-100 bg-sky-50/20 px-2">
+    <div className="relative overflow-hidden border-b border-sky-100 bg-gradient-to-b from-[rgba(255,255,255,.8)] to-[rgba(21,94,239,.08)] px-2">
       <Background />
       <div className="relative z-30 mx-auto max-w-2xl">
         <div className="flex origin-top px-2 pb-5 pt-12">
           <div className="select-none space-y-5">
-            <h2 className="inline-flex items-start text-5xl/none font-bold mb-1">
+            <h2 className="mb-1 inline-flex items-start text-5xl/none font-bold">
               <span>
                 Hello
                 <br />
@@ -52,10 +52,10 @@ export default function Header() {
                 prefetch
                 className={(active) =>
                   clsx(
-                    'relative block cursor-default select-none  py-1 after:absolute after:bottom-0 after:block after:h-[2px] after:w-full after:origin-center after:transform after:bg-sky-500 after:transition-all hover:text-gray-800',
+                    'relative block cursor-default select-none  py-1 after:absolute after:bottom-0 after:block after:h-[2px] after:w-full after:origin-center after:transform after:bg-blue-500 after:transition-all hover:text-gray-800',
                     [
                       active
-                        ? '!text-sky-500 after:scale-x-100'
+                        ? '!text-blue-500 after:scale-x-100'
                         : 'after:scale-0 hover:after:scale-100 hover:after:bg-gray-600',
                     ],
                   )
@@ -70,10 +70,10 @@ export default function Header() {
                 prefetch
                 className={(active) =>
                   clsx(
-                    'relative block cursor-default select-none  py-1 after:absolute after:bottom-0 after:block after:h-[2px] after:w-full after:origin-center after:transform after:bg-sky-500 after:transition-all hover:text-gray-800',
+                    'relative block cursor-default select-none  py-1 after:absolute after:bottom-0 after:block after:h-[2px] after:w-full after:origin-center after:transform after:bg-blue-500 after:transition-all hover:text-gray-800',
                     [
                       active
-                        ? '!text-sky-500 after:scale-x-100'
+                        ? '!text-blue-500 after:scale-x-100'
                         : 'after:scale-0 hover:after:scale-100 hover:after:bg-gray-600',
                     ],
                   )
