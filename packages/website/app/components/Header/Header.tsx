@@ -1,29 +1,12 @@
 'use client';
 import NavLink from '@/app/components/NavLink';
-import { Icon } from '@iconify/react';
 import clsx from 'clsx';
-import { Undo2 } from 'lucide-react';
 import { Route } from 'next';
-import { usePathname } from 'next/navigation';
 import { Background } from './Background';
 import Links, { links } from './links';
-import Link from 'next/link';
 
 export default function Header() {
-  const pathname = usePathname();
-  const enableMiniNav = !(pathname === '/' || pathname === '/posts');
-  if (enableMiniNav) {
-    return (
-      <div className="mx-auto max-w-2xl px-4 pb-4 pt-6">
-        <Link
-          href={'/posts'}
-          className="inline-block cursor-default rounded-lg border border-transparent p-1 transition hover:border-gray-200 hover:bg-gray-100"
-        >
-          <Undo2 />
-        </Link>
-      </div>
-    );
-  }
+
   return (
     <div className="relative overflow-hidden border-b border-sky-100 bg-gradient-to-b from-[rgba(255,255,255,.8)] to-[rgba(21,94,239,.08)] px-2">
       <Background />

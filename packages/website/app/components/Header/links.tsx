@@ -32,6 +32,7 @@ export default function Links({ items, className }: LinksProps) {
             key={link.url}
             target={link.target}
             href={link.url}
+            aria-label={link.title}
             className="group inline-flex cursor-default space-x-1 rounded-lg border border-transparent p-1 transition hover:border-gray-200 hover:bg-gray-100"
           >
             <Icon className={clsx('h-6 w-6 opacity-60 transition group-hover:opacity-100')} icon={link.icon} />

@@ -1,4 +1,3 @@
-import Header from '@/app/components/Header';
 import localFont from 'next/font/local';
 import TopLoader from 'nextjs-toploader';
 import 'tailwindcss/tailwind.css';
@@ -33,7 +32,7 @@ const harmonySans = localFont({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html>
+    <html lang="zh-CN">
       <head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="大文豪的博客" />
@@ -42,7 +41,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={harmonySans.className}>
         <TopLoader color="#60a5fa" />
         <div className="relative min-h-full">
-          <Header />
           {children}
         </div>
       </body>

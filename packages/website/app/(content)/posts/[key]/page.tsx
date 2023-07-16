@@ -1,11 +1,27 @@
 import Comments from '@/app/components/Comments';
+import Code from '@/app/components/MDXComponents/Code';
+import data from '@packages/content';
 import { format } from 'date-fns';
 import fs from 'fs/promises';
+import { Undo2 } from 'lucide-react';
 import { compileMDX } from 'next-mdx-remote/rsc';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import path from 'path';
-import data from '@packages/content';
-import Code from '@/app/components/MDXComponents/Code';
+
+export function generateMetadata({
+  params: { key },
+}: {
+  params: {
+    key: string;
+  };
+}) {
+  const post = data.map[key];
+  return {
+    title: post?.title ? `${post?.title} —— Wen's Blog` : "Wen's Blog",
+  };
+}
+
 
 export async function generateStaticParams() {
   const paths = Object.values(data.map).map((title) => ({
@@ -37,7 +53,7 @@ async function getPostsWithKey(key: string) {
       frontmatter,
     };
   } catch (e) {
-    console.log(e);
+    console.error("找不到文章内容：",e);
     notFound();
   }
 }
@@ -52,7 +68,15 @@ export default async function Posts({
   const { content, frontmatter } = await getPostsWithKey(key);
   return (
     <div className=" pb-12">
-      <div className="rounded-lg ">
+      <div>
+        <div className="mx-auto max-w-2xl px-2 py-6">
+          <Link
+            href={'/posts'}
+            className="inline-block cursor-default rounded-lg border border-transparent p-1 transition hover:border-gray-200 hover:bg-gray-100"
+          >
+            <Undo2 />
+          </Link>
+        </div>
         <article className="posts-theme xs:px-0 px-2">
           <h1>{frontmatter.title}</h1>
           <p>{frontmatter.fmtData}</p>
