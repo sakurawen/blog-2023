@@ -3,7 +3,7 @@ import Code from '@/app/components/MDXComponents/Code';
 import data from '@packages/content';
 import { format } from 'date-fns';
 import fs from 'fs/promises';
-import { Undo2 } from 'lucide-react';
+import Icon from "@/app/components/Icon";
 import { compileMDX } from 'next-mdx-remote/rsc';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -74,7 +74,7 @@ export default async function Posts({
             href={'/posts'}
             className="inline-block cursor-default rounded-lg border border-transparent p-1 transition hover:border-gray-200 hover:bg-gray-100"
           >
-            <Undo2 />
+            <Icon name="undo-2" />
           </Link>
         </div>
         <article className="posts-theme xs:px-0 px-2">
