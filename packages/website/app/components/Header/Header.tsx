@@ -21,9 +21,9 @@ export default function Header() {
               </span>
             </h2>
             <p className="text-sm md:text-base/6">
-              你看那通天的巨塔，每时每刻都有人往下跳。
+              我喜欢简单的东西,
               <br />
-              我小时候不懂，以为那是雪花。
+              因为复杂的我也不会。
             </p>
           </div>
         </div>
