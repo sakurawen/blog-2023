@@ -39,7 +39,7 @@ export default function Links({ items, className }: LinksProps) {
             {link.text && <span>{link.text}</span>}
           </a>
         );
-      })}
+      })} 
     </div>
   );
 }

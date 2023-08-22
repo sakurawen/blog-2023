@@ -1,5 +1,5 @@
 'use client';
-import NavLink from '@/app/components/NavLink';
+import NavLink from '@/app/_components/NavLink';
 import clsx from 'clsx';
 import { Route } from 'next';
 import { Background } from './Background';

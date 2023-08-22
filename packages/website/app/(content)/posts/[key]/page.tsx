@@ -1,9 +1,9 @@
-import Comments from '@/app/components/Comments';
-import Code from '@/app/components/MDXComponents/Code';
+import Comments from '@/app/(content)/posts/[key]/_components/Comments';
+import Icon from "@/app/_components/Icon";
+import Code from '@/app/_components/MDXComponents/Code';
 import data from '@packages/content';
 import { format } from 'date-fns';
 import fs from 'fs/promises';
-import Icon from "@/app/components/Icon";
 import { compileMDX } from 'next-mdx-remote/rsc';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -65,7 +65,9 @@ export default async function Posts({
     key: string;
   };
 }) {
-  const { content, frontmatter } = await getPostsWithKey(key);
+  const posts = await getPostsWithKey(key);
+  if(!posts) return notFound();
+  const {content,frontmatter} = posts;
   return (
     <div className=" pb-12">
       <div>

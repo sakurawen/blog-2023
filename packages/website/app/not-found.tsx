@@ -1,4 +1,4 @@
-import DefaultNotFound from "@/app/components/DefaultNotFound";
+import DefaultNotFound from "@/app/_components/DefaultNotFound";
 
 
 export default DefaultNotFound;
