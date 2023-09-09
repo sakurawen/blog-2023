@@ -29,7 +29,6 @@ const harmonySans = localFont({
   display: 'swap',
 });
 
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-CN">
@@ -39,10 +38,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </head>
       <body className={harmonySans.className}>
-        <TopLoader color="#60a5fa" />
-        <div className="relative min-h-full">
-          {children}
-        </div>
+        <TopLoader color="#b3c4b3" />
+        <div className="relative min-h-full">{children}</div>
       </body>
     </html>
   );

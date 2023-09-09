@@ -1,17 +1,16 @@
 'use client';
 import { Highlight, themes } from 'prism-react-renderer';
-import { ReactNode } from 'react';
+import { PropsWithChildren } from 'react';
 
-type CodeProps = {
-  children?: ReactNode;
+type CodeProps = PropsWithChildren<{
   className?: string;
-};
+}>;
 
 export default function Code({ className, children }: CodeProps) {
   const lang = (className?.replace('language-', '') || '') as string;
   const code = children as string;
   if (!lang) {
-    return <code>{children}</code>;
+    return <code>{code}</code>;
   }
   return (
     <div>

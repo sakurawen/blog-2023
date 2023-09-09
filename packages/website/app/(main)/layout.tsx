@@ -4,7 +4,7 @@ function MainLayout({ children }: PropsWithChildren) {
   return (
     <div>
       <Header />
-      <div className="mx-auto mt-4 min-h-full max-w-2xl px-2 pb-8">{children}</div>
+      <div className="mx-auto mt-4 min-h-full max-w-2xl px-2 pb-8 sm:px-0">{children}</div>
     </div>
   );
 }

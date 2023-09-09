@@ -1,74 +1,52 @@
 'use client';
-import NavLink from '@/app/_components/NavLink';
-import clsx from 'clsx';
 import { Route } from 'next';
-import { Background } from './Background';
-import Links, { links } from './links';
+import NavLink from '../NavLink';
+import Link from 'next/link';
+import cx from 'clsx';
+import { Icon } from '@iconify/react';
+
+type MenuItem = {
+  text: string;
+  href: Route;
+};
+const menus: MenuItem[] = [
+  {
+    text: 'About',
+    href: '/',
+  },
+  {
+    text: 'Posts',
+    href: '/posts',
+  },
+];
 
 export default function Header() {
-
   return (
-    <div className="relative overflow-hidden border-b border-sky-100 bg-gradient-to-b from-[rgba(255,255,255,.8)] to-[rgba(21,94,239,.08)] px-2">
-      <Background />
-      <div className="relative z-30 mx-auto max-w-2xl">
-        <div className="flex origin-top px-2 pb-5 pt-12">
-          <div className="select-none space-y-5">
-            <h2 className="mb-1 inline-flex items-start text-5xl/none font-bold">
-              <span>
-                Hello
-                <br />
-                I&apos;m Wen
-              </span>
-            </h2>
-            <p className="text-sm md:text-base/6">
-              我喜欢简单的东西,
-              <br />
-              因为复杂的我也不会。
-            </p>
-          </div>
-        </div>
-        <div className={'nav-menu flex flex-col px-2'}>
-          <Links items={links} />
-          <div className={'mt-5 flex items-center'}>
-            <div className="text-center text-gray-600">
+    <nav className="mx-auto mb-8 flex max-w-2xl items-center justify-between border-b border-gray-200 px-2 py-10  sm:px-0">
+      <div className="logo text-xl font-bold">Wen&apos;s Blog</div>
+      <ul className="menu-items flex items-center space-x-6">
+        {menus.map((menu) => {
+          return (
+            <li key={menu.href}>
               <NavLink
-                prefetch
+                href={menu.href}
                 className={(active) =>
-                  clsx(
-                    'relative block cursor-default select-none  py-1 after:absolute after:bottom-0 after:block after:h-[2px] after:w-full after:origin-center after:transform after:bg-blue-500 after:transition-all hover:text-gray-800',
-                    [
-                      active
-                        ? '!text-blue-500 after:scale-x-100'
-                        : 'after:scale-0 hover:after:scale-100 hover:after:bg-gray-600',
-                    ],
-                  )
+                  cx('cursor-default underline-offset-8', [
+                    active ? 'underline decoration-wavy' : 'hover:underline hover:decoration-dashed',
+                  ])
                 }
-                href="/"
               >
-                <span className="mx-1.5">首页</span>
+                {menu.text}
               </NavLink>
-            </div>
-            <div className="text-center text-gray-600">
-              <NavLink
-                prefetch
-                className={(active) =>
-                  clsx(
-                    'relative block cursor-default select-none  py-1 after:absolute after:bottom-0 after:block after:h-[2px] after:w-full after:origin-center after:transform after:bg-blue-500 after:transition-all hover:text-gray-800',
-                    [
-                      active
-                        ? '!text-blue-500 after:scale-x-100'
-                        : 'after:scale-0 hover:after:scale-100 hover:after:bg-gray-600',
-                    ],
-                  )
-                }
-                href={'/posts' as Route}
-              >
-                <span className="mx-1.5">博客</span>
-              </NavLink>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            </li>
+          );
+        })}
+        <li>
+          <Link href="https://github.com/sakurawen" target="_blank" className="opacity-80 hover:opacity-100">
+            <Icon icon="lucide:github" className="h-5 w-5" />
+          </Link>
+        </li>
+      </ul>
+    </nav>
   );
 }

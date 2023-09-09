@@ -12,11 +12,15 @@ export default function Posts() {
             <ul className="mb-4 mt-2">
               {item.list.map((p) => {
                 return (
-                  <li key={p.key} className="mb-4 mt-1  text-gray-500">
-                    <Link href={`/posts/${p.key}` as Route} className="cursor-default hover:text-gray-950">
+                  <li key={p.key} className="mb-4 mt-1">
+                    <Link
+                      href={`/posts/${p.key}` as Route}
+                      className="cursor-default text-base font-bold text-gray-800 underline-offset-[6px] hover:text-gray-950 hover:underline hover:decoration-dashed"
+                    >
                       {p.title}
                     </Link>
-                    <span className="ml-2 select-none text-xs text-gray-400">{p.fmtDate}</span>
+                    <br />
+                    <span className="select-none text-sm text-gray-400">{p.fmtDate}</span>
                   </li>
                 );
               })}

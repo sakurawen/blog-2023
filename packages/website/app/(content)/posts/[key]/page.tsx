@@ -1,5 +1,5 @@
 import Comments from '@/app/(content)/posts/[key]/_components/Comments';
-import Icon from "@/app/_components/Icon";
+import Icon from '@/app/_components/Icon';
 import Code from '@/app/_components/MDXComponents/Code';
 import data from '@packages/content';
 import { format } from 'date-fns';
@@ -21,7 +21,6 @@ export function generateMetadata({
     title: post?.title ? `${post?.title} —— Wen's Blog` : "Wen's Blog",
   };
 }
-
 
 export async function generateStaticParams() {
   const paths = Object.values(data.map).map((title) => ({
@@ -53,7 +52,7 @@ async function getPostsWithKey(key: string) {
       frontmatter,
     };
   } catch (e) {
-    console.error("找不到文章内容：",e);
+    console.error('找不到文章内容：', e);
     notFound();
   }
 }
@@ -66,8 +65,8 @@ export default async function Posts({
   };
 }) {
   const posts = await getPostsWithKey(key);
-  if(!posts) return notFound();
-  const {content,frontmatter} = posts;
+  if (!posts) return notFound();
+  const { content, frontmatter } = posts;
   return (
     <div className=" pb-12">
       <div>
