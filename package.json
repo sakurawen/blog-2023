@@ -15,16 +15,21 @@
   "author": "",
   "license": "ISC",
   "lint-staged": {
-    "*.{ts,tsx}": [
+    "packages/**/*.{ts,tsx}": [
       "eslint --fix",
       "prettier --write"
     ],
-    "*.{js,json}": [
+    "packages/**/*.{js,json}": [
       "prettier --write"
     ],
-    "*.md": [
+    "packages/**/*.md": [
       "prettier --write"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
