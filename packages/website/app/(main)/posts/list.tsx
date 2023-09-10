@@ -9,10 +9,10 @@ export default function Posts() {
         return (
           <div key={item.year}>
             {/* <h2 className="text-2xl font-bold">{item.year}</h2> */}
-            <ul className="mb-4 mt-2">
+            <ul className="mb-4">
               {item.list.map((p) => {
                 return (
-                  <li key={p.key} className="mb-4 mt-1">
+                  <li key={p.key} className="mb-4">
                     <Link
                       href={`/posts/${p.key}` as Route}
                       className="cursor-default text-base font-bold text-gray-800 underline-offset-[6px] hover:text-gray-950 hover:underline hover:decoration-dashed"

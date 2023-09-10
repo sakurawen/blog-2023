@@ -68,9 +68,9 @@ export default async function Posts({
   if (!posts) return notFound();
   const { content, frontmatter } = posts;
   return (
-    <div className=" pb-12">
+    <div className="pb-12">
       <div>
-        <div className="mx-auto max-w-2xl px-2 py-6">
+        <div className="mx-auto max-w-2xl px-2 pb-6">
           <Link
             href={'/posts'}
             className="inline-block cursor-default rounded-lg border border-transparent p-1 transition hover:border-gray-200 hover:bg-gray-100"
