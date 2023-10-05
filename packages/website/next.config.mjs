@@ -13,7 +13,6 @@ const nextConfig = {
   swcMinify: true,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   experimental: {
-    appDir: true,
     mdxRs: true,
     typedRoutes: true,
   },

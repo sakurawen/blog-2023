@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import Header from '@/app/_components/Header';
+import Header from '@/app/_components/page-header';
 function MainLayout({ children }: PropsWithChildren) {
   return (
     <div>

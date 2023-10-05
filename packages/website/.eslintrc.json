@@ -1,8 +1,18 @@
 {
   "extends": ["next/core-web-vitals"],
   "rules": {
-    "indent": ["error", 2],
     "semi": ["error", "always"],
-    "@next/next/no-html-link-for-pages": 0
+    "@next/next/no-html-link-for-pages": 0,
+    "array-bracket-spacing": ["error", "always"],
+    "object-curly-spacing": ["error", "always"],
+    "quotes": [1, "single"], // 单引号
+    "indent": [
+      "warn",
+      2,
+      {
+        // 缩进空格
+        "SwitchCase": 1
+      }
+    ]
   }
 }

@@ -33,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="zh-CN">
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/vercel.svg" />
         <meta name="description" content="大文豪的博客" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </head>

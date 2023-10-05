@@ -1,10 +1,10 @@
 'use client';
 import { Route } from 'next';
-import NavLink from '../NavLink';
+import NavLink from '../nav-link';
 import Link from 'next/link';
 import cx from 'clsx';
 import { Icon } from '@iconify/react';
-import { Hr } from '@/app/_components/Hr';
+import { Line } from '@/app/_components/line';
 
 type MenuItem = {
   text: string;
@@ -49,7 +49,7 @@ export default function Header() {
           </li>
         </ul>
       </nav>
-      <Hr />
+      <Line />
     </section>
   );
 }

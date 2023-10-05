@@ -1,6 +1,6 @@
-import Comments from '@/app/(content)/posts/[key]/_components/Comments';
-import Icon from '@/app/_components/Icon';
-import Code from '@/app/_components/MDXComponents/Code';
+import Comment from '@/app/(content)/posts/[key]/_components/comment';
+import { Undo2 } from 'lucide-react';
+import Code from '@/app/_components/mdx-components/Code';
 import data from '@packages/content';
 import { format } from 'date-fns';
 import fs from 'fs/promises';
@@ -75,7 +75,7 @@ export default async function Posts({
             href={'/posts'}
             className="inline-block cursor-default rounded-lg border border-transparent p-1 transition hover:border-gray-200 hover:bg-gray-100"
           >
-            <Icon name="undo-2" />
+            <Undo2 />
           </Link>
         </div>
         <article className="posts-theme xs:px-0 px-2">
@@ -84,7 +84,7 @@ export default async function Posts({
           {content}
         </article>
       </div>
-      <Comments />
+      <Comment />
     </div>
   );
 }
