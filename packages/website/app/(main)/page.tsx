@@ -5,6 +5,7 @@ export const metadata = {
   title: "Wen's Blog",
 };
 
+
 export default async function Home() {
   const pinned = await getPinnedProject();
   return (

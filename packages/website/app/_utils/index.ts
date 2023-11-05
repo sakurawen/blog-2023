@@ -42,6 +42,7 @@ export async function getPinnedProject() {
     body: JSON.stringify({
       query,
     }),
+    cache: 'no-cache',
   });
   return res.json() as Promise<PinnedResponse>;
 }
